@@ -8,20 +8,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#FDB91A", // Oz Gold
-        secondary: "#FF6B35", // Sunset Orange
-        background: "#1A1A1D", // Deep Night
-        surface: "#F5F1E8", // Cool Sand
+        primary: "#fdb91c", // Oz Gold
+        "primary-dark": "#e0a10f",
+        secondary: "#FF5A36", // Sunset Orange
+        "sunset-orange": "#FF5A36",
+        background: "#181610", // Deep Night
+        "deep-night": "#181610",
+        surface: "#EAE4D6", // Cool Sand
+        "cool-sand": "#EAE4D6",
+        "card-dark": "#28241b",
+        "white-smoke": "#F8F7F5",
         danger: "#C1292E", // Outback Red
-        "card-dark": "#2C2C2E",
-        "deep-night": "#1A1A1D",
-        "oz-gold": "#FDB91A",
-        "sunset-orange": "#FF6B35",
-        "cool-sand": "#F5F1E8",
-        "outback-red": "#C1292E",
       },
       fontFamily: {
-        sans: ["System"],
+        sans: ["PlusJakartaSans-Regular"],
+        bold: ["PlusJakartaSans-Bold"],
+        medium: ["PlusJakartaSans-Medium"],
       },
     },
   },

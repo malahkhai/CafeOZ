@@ -23,7 +23,7 @@ export default function ClubScreen() {
                     <Text className="text-white text-[24px] font-bold leading-tight">Unlock the Full{"\n"}
                         <Text className="text-primary">Oz Experience</Text>
                     </Text>
-                    <p className="text-gray-400 text-[14px] mt-2">Join the tribe and enjoy exclusive perks at all locations.</p>
+                    <Text className="text-gray-400 text-[14px] mt-2">Join the tribe and enjoy exclusive perks at all locations.</Text>
                 </View>
 
                 {/* Plan Toggle */}

@@ -12,19 +12,20 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: theme.primary,
-        tabBarInactiveTintColor: '#8E8E93',
+        tabBarInactiveTintColor: colorScheme === 'dark' ? '#EAE4D6' : '#8E8E93',
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: colorScheme === 'dark' ? '#181610' : '#FFFFFF',
-          borderTopWidth: 0,
+          backgroundColor: theme.background,
+          borderTopWidth: 1,
+          borderTopColor: 'rgba(255,255,255,0.05)',
           elevation: 0,
-          height: 88,
-          paddingBottom: 30,
-          paddingTop: 10,
+          height: 90,
+          paddingBottom: 32,
+          paddingTop: 12,
         },
         tabBarLabelStyle: {
-          fontSize: 10,
-          fontWeight: '500',
+          fontSize: 11,
+          fontFamily: 'PlusJakartaSans-Medium',
         },
       }}>
       <Tabs.Screen
@@ -33,8 +34,8 @@ export default function TabLayout() {
           title: 'Events',
           tabBarIcon: ({ color, focused }) => (
             <SymbolView
-              name={focused ? "calendar.badge.plus" : "calendar"}
-              size={24}
+              name={focused ? "calendar" : "calendar"}
+              size={22}
               tintColor={color}
             />
           ),
@@ -46,8 +47,8 @@ export default function TabLayout() {
           title: 'Locations',
           tabBarIcon: ({ color, focused }) => (
             <SymbolView
-              name={focused ? "mappin.circle.fill" : "mappin.circle"}
-              size={24}
+              name={focused ? "map.fill" : "map"}
+              size={22}
               tintColor={color}
             />
           ),
@@ -60,7 +61,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <SymbolView
               name={focused ? "fork.knife" : "fork.knife"}
-              size={24}
+              size={22}
               tintColor={color}
             />
           ),
@@ -72,16 +73,11 @@ export default function TabLayout() {
           title: 'Club',
           tabBarIcon: ({ color, focused }) => (
             <SymbolView
-              name={focused ? "star.circle.fill" : "star.circle"}
-              size={24}
+              name={focused ? "tag.fill" : "tag"}
+              size={22}
               tintColor={color}
             />
           ),
-          tabBarBadge: '3',
-          tabBarBadgeStyle: {
-            backgroundColor: '#FF6B35',
-            color: 'white',
-          },
         }}
       />
       <Tabs.Screen
@@ -90,8 +86,8 @@ export default function TabLayout() {
           title: 'Profile',
           tabBarIcon: ({ color, focused }) => (
             <SymbolView
-              name={focused ? "person.circle.fill" : "person.circle"}
-              size={24}
+              name={focused ? "person.fill" : "person"}
+              size={22}
               tintColor={color}
             />
           ),

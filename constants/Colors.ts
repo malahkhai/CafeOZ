@@ -1,30 +1,30 @@
-const tintColorLight = '#FDB91A';
-const tintColorDark = '#FDB91A';
+const tintColorLight = '#fdb91c';
+const tintColorDark = '#fdb91c';
 
 export const Colors = {
   light: {
-    text: '#1A1A1D',
-    background: '#F5F1E8',
+    text: '#181610',
+    background: '#EAE4D6',
     tint: tintColorLight,
     icon: '#8E8E93',
     tabIconDefault: '#8E8E93',
     tabIconSelected: tintColorLight,
-    surface: '#FFFFFF',
-    primary: '#FDB91A',
-    secondary: '#FF6B35',
+    surface: '#F8F7F5',
+    primary: '#fdb91c',
+    secondary: '#FF5A36',
     danger: '#C1292E',
   },
   dark: {
-    text: '#FFFFFF',
-    background: '#000000',
+    text: '#EAE4D6',
+    background: '#181610',
     tint: tintColorDark,
     icon: '#8E8E93',
     tabIconDefault: '#8E8E93',
     tabIconSelected: tintColorDark,
-    surface: '#1C1C1E',
-    primary: '#FFD60A', // Adjusted for dark mode visibility on black
-    secondary: '#FF6B35',
+    surface: '#28241b',
+    primary: '#fdb91c',
+    secondary: '#FF5A36',
     danger: '#C1292E',
-    card: '#2C2C2E',
+    card: '#28241b',
   },
 };
