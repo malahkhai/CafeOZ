@@ -1,0 +1,7 @@
+{
+  "name": "Café Oz App",
+  "description": "The official Café Oz mobile experience for browsing events, finding locations, ordering from the menu, and managing your Oz Club membership.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

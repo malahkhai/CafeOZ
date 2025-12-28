@@ -1,57 +1,100 @@
+import { Colors } from '@/constants/Colors';
+import { Tabs } from 'expo-router';
+import { SymbolView } from 'expo-symbols';
 import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
-
-import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
-
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
+import { useColorScheme } from 'react-native';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const colorScheme = useColorScheme() ?? 'light';
+  const theme = Colors[colorScheme];
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
+        tabBarActiveTintColor: theme.primary,
+        tabBarInactiveTintColor: '#8E8E93',
+        headerShown: false,
+        tabBarStyle: {
+          backgroundColor: colorScheme === 'dark' ? '#181610' : '#FFFFFF',
+          borderTopWidth: 0,
+          elevation: 0,
+          height: 88,
+          paddingBottom: 30,
+          paddingTop: 10,
+        },
+        tabBarLabelStyle: {
+          fontSize: 10,
+          fontWeight: '500',
+        },
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
+          title: 'Events',
+          tabBarIcon: ({ color, focused }) => (
+            <SymbolView
+              name={focused ? "calendar.badge.plus" : "calendar"}
+              size={24}
+              tintColor={color}
+            />
           ),
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="locations"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Locations',
+          tabBarIcon: ({ color, focused }) => (
+            <SymbolView
+              name={focused ? "mappin.circle.fill" : "mappin.circle"}
+              size={24}
+              tintColor={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="menu"
+        options={{
+          title: 'Menu',
+          tabBarIcon: ({ color, focused }) => (
+            <SymbolView
+              name={focused ? "fork.knife" : "fork.knife"}
+              size={24}
+              tintColor={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="club"
+        options={{
+          title: 'Club',
+          tabBarIcon: ({ color, focused }) => (
+            <SymbolView
+              name={focused ? "star.circle.fill" : "star.circle"}
+              size={24}
+              tintColor={color}
+            />
+          ),
+          tabBarBadge: '3',
+          tabBarBadgeStyle: {
+            backgroundColor: '#FF6B35',
+            color: 'white',
+          },
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color, focused }) => (
+            <SymbolView
+              name={focused ? "person.circle.fill" : "person.circle"}
+              size={24}
+              tintColor={color}
+            />
+          ),
         }}
       />
     </Tabs>
