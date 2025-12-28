@@ -12,10 +12,10 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: theme.primary,
-        tabBarInactiveTintColor: colorScheme === 'dark' ? '#EAE4D6' : '#8E8E93',
+        tabBarInactiveTintColor: 'rgba(234, 228, 214, 0.5)', // Cool Sand with opacity
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: theme.background,
+          backgroundColor: '#181610', // Always Deep Night
           borderTopWidth: 1,
           borderTopColor: 'rgba(255,255,255,0.05)',
           elevation: 0,
